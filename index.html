@@ -1,65 +1,48 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hinduismus</title>
+    <title>Hinduismus Spiel</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #ffcc80;
-            padding: 10px;
-            text-align: center;
-        }
-        nav {
             background-color: #ff7043;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 15px;
             color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .content {
             padding: 20px;
         }
-        footer {
+        .start-button {
+            margin-top: 50px;
+            padding: 15px 30px;
             background-color: #ffcc80;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .start-button:hover {
+            background-color: #ffb74d;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Hinduismus</h1>
+        <h1>Hinduismus - Das Spiel</h1>
+        <p>Entdecke die Welt des Hinduismus und teste dein Wissen!</p>
     </header>
-    <nav>
-        <a href="overview.html">Überblick</a>
-        <a href="rituale.html">Rituale</a>
-        <a href="feste.html">Feste</a>
-        <a href="glauben.html">Glaube</a>
-        <a href="geschichte.html">Geschichte</a>
-    </nav>
-    <div class="content">
-        <h2>Willkommen zum Hinduismus</h2>
-        <p>Wählen Sie ein Thema aus dem Menü, um mehr über den Hinduismus zu erfahren.</p>
-    </div>
-    <footer>
-        © 2024 Hinduismus Informationen
-    </footer>
+    <main>
+        <button class="start-button" onclick="startGame()">Start</button>
+    </main>
+    <script>
+        function startGame() {
+            window.location.href = 'menu.html';
+        }
+    </script>
 </body>
 </html>
