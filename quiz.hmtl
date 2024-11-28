@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffecb3;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff9800;
+            color: white;
+            padding: 20px;
+        }
+        .question {
+            margin: 20px;
+            font-size: 18px;
+        }
+        .answer-button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #ffc107;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .answer-button:hover {
+            background-color: #ffb300;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Quiz: Teste dein Wissen</h1>
+    </header>
+    <div class="content">
+        <div class="question">
+            <p>Frage 1: Was ist ein tägliches hinduistisches Ritual?</p>
+            <button class="answer-button" onclick="alert('Richtig!')">Puja</button>
+            <button class="answer-button" onclick="alert('Falsch! Versuche es nochmal.')">Holi</button>
+        </div>
+    </div>
+    <footer>
+        <p>© 2024 Hinduismus Informationen</p>
+    </footer>
+</body>
+</html>
