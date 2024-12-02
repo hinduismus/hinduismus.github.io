@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hinduismus Entdecken</title>
+    <title>Erforschung des Hinduismus</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -21,6 +21,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow-x: hidden;
         }
 
         header {
@@ -37,23 +38,13 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        #content-container {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-            opacity: 1;
-            transform: scale(1);
-            transition: all 0.6s ease-in-out;
-        }
-
         .menu {
             display: flex;
             flex-direction: column;
             gap: 1rem;
             width: 100%;
             max-width: 300px;
+            margin: 0 auto;
         }
 
         .menu a {
@@ -75,55 +66,85 @@
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2rem;
+        .page-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transform: scale(0);
+            transform-origin: top left;
+            transition: all 0.7s ease-in-out;
+            z-index: -1;
+        }
+
+        .active-page {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 1;
+        }
+
+        .content {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
+
+        .back-button {
+            background-color: #FF5733;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #FF9933;
+        }
     </style>
+</head>
+<body>
+    <div id="main-menu" class="page-container active-page">
+        <header>
+            <h1>Erforschung des Hinduismus</h1>
+        </header>
+
+        <main>
+            <nav class="menu">
+                <a href="#" id="geschichte-link">Geschichte</a>
+                <a href="#">Zentrale Glaubensinhalte</a>
+                <a href="#">Heilige Schriften</a>
+                <a href="#">Rituale und Feste</a>
+                <a href="#">Lebensregeln</a>
+                <a href="#">Verbreitung</a>
+            </nav>
+        </main>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const links = document.querySelectorAll('.menu a');
-            const contentContainer = document.querySelector('#content-container');
+            const geschichteLink = document.getElementById('geschichte-link');
 
-            links.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const url = e.target.getAttribute('href');
-
-                    // Add animation out
-                    contentContainer.style.opacity = 0;
-                    contentContainer.style.transform = "scale(0.9)";
-                    
-                    setTimeout(() => {
-                        // Load new content dynamically
-                        fetch(url)
-                            .then(response => response.text())
-                            .then(html => {
-                                contentContainer.innerHTML = html;
-                                contentContainer.style.opacity = 1;
-                                contentContainer.style.transform = "scale(1)";
-                            });
-                    }, 600); // Match transition duration
-                });
+            // Handling page transition
+            geschichteLink.addEventListener('click', () => {
+                const container = document.querySelector('.page-container');
+                container.classList.remove('active-page');
+                window.location.href = 'geschichte.html'; // Transition to 'geschichte.html' page
             });
         });
     </script>
-</head>
-<body>
-    <header>
-        <h1>Hinduismus Entdecken</h1>
-    </header>
-
-    <main id="content-container">
-        <nav class="menu">
-            <a href="geschichte.html">Geschichte</a>
-            <a href="glaubensinhalte.html">Zentrale Glaubensinhalte</a>
-            <a href="schriften.html">Heilige Schriften</a>
-            <a href="rituale.html">Rituale und Feste</a>
-            <a href="lebensregeln.html">Lebensregeln</a>
-            <a href="verbreitung.html">Verbreitung</a>
-        </nav>
-    </main>
 </body>
 </html>
