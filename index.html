@@ -19,8 +19,7 @@
             color: #333;
             line-height: 1.6;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            overflow: hidden;
         }
 
         header {
@@ -28,6 +27,8 @@
             padding: 2rem;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
         }
 
         h1 {
@@ -51,6 +52,10 @@
             gap: 1rem;
             width: 100%;
             max-width: 600px;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideIn 1.2s ease-in forwards;
+            animation-delay: 0.5s;
         }
 
         .menu a {
@@ -61,14 +66,14 @@
             border-radius: 8px;
             text-align: center;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease, transform 0.2s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .menu a:hover {
             background-color: #FF5733;
             color: #fff;
-            transform: translateY(-3px);
+            transform: scale(1.1) rotate(3deg);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }
 
@@ -83,12 +88,14 @@
             color: #fff;
             cursor: pointer;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            transition: all 0.3s ease, transform 0.3s;
+            animation: fadeIn 1.5s ease-in forwards;
+            animation-delay: 1s;
         }
 
         button:hover {
             background-color: #FF9933;
-            transform: translateY(-3px);
+            transform: scale(1.1);
         }
 
         .mandala {
@@ -102,7 +109,7 @@
             background-size: contain;
             opacity: 0.1;
             z-index: -1;
-            animation: rotate 60s linear infinite;
+            animation: rotate 60s linear infinite, fadeIn 2s forwards;
         }
 
         @keyframes rotate {
@@ -111,6 +118,26 @@
             }
             to {
                 transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
@@ -144,7 +171,10 @@
         const topics = ["vedas", "deities", "philosophy", "practices", "festivals", "symbols"];
         document.querySelector("#randomTopic").addEventListener("click", () => {
             const randomTopic = topics[Math.floor(Math.random() * topics.length)];
-            window.location.href = `${randomTopic}.html`;
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                window.location.href = `${randomTopic}.html`;
+            }, 500);
         });
     </script>
 </body>
