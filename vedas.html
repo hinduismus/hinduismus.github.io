@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Vedas - Exploring Hinduism</title>
+    <title>Geschichte - Hinduismus Entdecken</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -19,14 +19,8 @@
             color: #333;
             line-height: 1.6;
             min-height: 100vh;
-            overflow: hidden;
-        }
-
-        header {
-            background-color: #FF9933;
-            padding: 1rem 2rem;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
         }
 
         .timeline {
@@ -71,8 +65,11 @@
             font-size: 1rem;
         }
 
-        .timeline div.active:before {
-            background-color: white;
+        header {
+            background-color: #FF9933;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
@@ -81,139 +78,38 @@
             margin-bottom: 0.5rem;
         }
 
-        .back-link {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .back-link:hover {
-            color: #FFF5E6;
-        }
-
-        main {
-            flex-grow: 1;
-            padding: 4rem 2rem 2rem; /* Padding adjusted for timeline */
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
         .content {
             background-color: #fff;
             border-radius: 8px;
             padding: 2rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInSlideUp 1.2s ease-out forwards;
+            margin-top: 5rem;
         }
 
         h2 {
             color: #FF5733;
-            margin-bottom: 1rem;
-            opacity: 0;
-            animation: fadeIn 1.5s ease-in forwards;
-        }
-
-        p, ul {
-            opacity: 0;
-            animation: fadeIn 1.5s ease-in forwards;
-            animation-delay: 0.3s;
-        }
-
-        ul {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-        }
-
-        .mandala {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="%23FF9933" stroke-width="2"/><circle cx="50" cy="50" r="35" fill="none" stroke="%23FF9933" stroke-width="2"/><circle cx="50" cy="50" r="25" fill="none" stroke="%23FF9933" stroke-width="2"/><circle cx="50" cy="50" r="15" fill="none" stroke="%23FF9933" stroke-width="2"/></svg>');
-            background-size: contain;
-            opacity: 0.1;
-            z-index: -1;
-            animation: rotate 60s linear infinite, fadeIn 2s forwards;
-        }
-
-        @keyframes rotate {
-            from {
-                transform: translate(-50%, -50%) rotate(0deg);
-            }
-            to {
-                transform: translate(-50%, -50%) rotate(360deg);
-            }
-        }
-
-        @keyframes fadeInSlideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-            }
-            to {
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 1.5rem;
-            }
         }
     </style>
 </head>
 <body>
     <div class="timeline">
-        <div class="completed">Intro</div>
-        <div class="active">Vedas</div>
-        <div>Deities</div>
-        <div>Philosophy</div>
-        <div>Practices</div>
+        <div class="active">Geschichte</div>
+        <div>Glaubensinhalte</div>
+        <div>Heilige Schriften</div>
+        <div>Rituale</div>
+        <div>Lebensregeln</div>
+        <div>Verbreitung</div>
     </div>
 
     <header>
-        <h1>The Vedas</h1>
-        <a href="index.html" class="back-link">&larr; Back to Menu</a>
+        <h1>Geschichte</h1>
     </header>
 
     <main>
-        <section class="content">
-            <h2>What are the Vedas?</h2>
-            <p>The Vedas are the most ancient and sacred texts in Hinduism. They are considered a direct revelation of divine knowledge.</p>
-            <h3>Main Categories of Vedas:</h3>
-            <ul>
-                <li><strong>Rigveda:</strong> Hymns praising the deities.</li>
-                <li><strong>Yajurveda:</strong> Ritual instructions.</li>
-                <li><strong>Samaveda:</strong> Melodies and chants.</li>
-                <li><strong>Atharvaveda:</strong> Spells and incantations.</li>
-            </ul>
-        </section>
+        <div class="content">
+            <h2>Einleitung</h2>
+            <p>Der Hinduismus ist eine der ältesten Religionen der Welt...</p>
+        </div>
     </main>
-
-    <div class="mandala"></div>
 </body>
 </html>
