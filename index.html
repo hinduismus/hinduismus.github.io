@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exploring Hinduism</title>
+    <title>Hinduismus Entdecken</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -19,7 +19,8 @@
             color: #333;
             line-height: 1.6;
             min-height: 100vh;
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         header {
@@ -27,8 +28,6 @@
             padding: 2rem;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            animation: fadeIn 1s forwards;
         }
 
         h1 {
@@ -41,21 +40,17 @@
         main {
             flex-grow: 1;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
             padding: 2rem;
         }
 
         .menu {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 1rem;
             width: 100%;
-            max-width: 600px;
-            transform: translateY(50px);
-            opacity: 0;
-            animation: slideIn 1.2s ease-in forwards;
-            animation-delay: 0.5s;
+            max-width: 300px;
         }
 
         .menu a {
@@ -66,36 +61,15 @@
             border-radius: 8px;
             text-align: center;
             font-weight: 600;
-            transition: all 0.3s ease, transform 0.2s ease;
+            transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .menu a:hover {
             background-color: #FF5733;
             color: #fff;
-            transform: scale(1.1) rotate(3deg);
+            transform: translateY(-3px);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        button {
-            margin-top: 2rem;
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 8px;
-            background-color: #FF5733;
-            color: #fff;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease, transform 0.3s;
-            animation: fadeIn 1.5s ease-in forwards;
-            animation-delay: 1s;
-        }
-
-        button:hover {
-            background-color: #FF9933;
-            transform: scale(1.1);
         }
 
         .mandala {
@@ -109,7 +83,7 @@
             background-size: contain;
             opacity: 0.1;
             z-index: -1;
-            animation: rotate 60s linear infinite, fadeIn 2s forwards;
+            animation: rotate 60s linear infinite;
         }
 
         @keyframes rotate {
@@ -118,26 +92,6 @@
             }
             to {
                 transform: translate(-50%, -50%) rotate(360deg);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
             }
         }
 
@@ -150,32 +104,20 @@
 </head>
 <body>
     <header>
-        <h1>Exploring Hinduism</h1>
+        <h1>Hinduismus Entdecken</h1>
     </header>
 
     <main>
         <nav class="menu">
-            <a href="vedas.html">Vedas</a>
-            <a href="deities.html">Deities</a>
-            <a href="philosophy.html">Philosophy</a>
-            <a href="practices.html">Practices</a>
-            <a href="festivals.html">Festivals</a>
-            <a href="symbols.html">Symbols</a>
+            <a href="geschichte.html">Geschichte</a>
+            <a href="glaubensinhalte.html">Zentrale Glaubensinhalte</a>
+            <a href="schriften.html">Heilige Schriften</a>
+            <a href="rituale.html">Rituale und Feste</a>
+            <a href="lebensregeln.html">Lebensregeln</a>
+            <a href="verbreitung.html">Verbreitung</a>
         </nav>
-        <button id="randomTopic">Discover a Random Topic</button>
     </main>
 
     <div class="mandala"></div>
-
-    <script>
-        const topics = ["vedas", "deities", "philosophy", "practices", "festivals", "symbols"];
-        document.querySelector("#randomTopic").addEventListener("click", () => {
-            const randomTopic = topics[Math.floor(Math.random() * topics.length)];
-            document.body.style.opacity = '0';
-            setTimeout(() => {
-                window.location.href = `${randomTopic}.html`;
-            }, 500);
-        });
-    </script>
 </body>
 </html>
