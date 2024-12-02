@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erforschung des Hinduismus</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
         * {
             margin: 0;
@@ -15,7 +15,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #FFF5E6;
+            background: linear-gradient(135deg, #FFF5E6, #FFE0B2);
             color: #333;
             line-height: 1.6;
             min-height: 100vh;
@@ -25,10 +25,11 @@
         }
 
         header {
-            background-color: #FF9933;
-            padding: 2rem;
+            background: linear-gradient(135deg, #FF9933, #FF5733);
+            padding: 3rem 2rem;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeInDown 0.8s ease-out;
         }
 
         h1 {
@@ -38,61 +39,78 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .menu {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            width: 100%;
-            max-width: 300px;
+        .subtitle {
+            color: #FFF5E6;
+            font-size: 1.2rem;
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        .menu a {
-            background-color: #fff;
-            color: #FF5733;
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeIn 0.8s ease-out 0.3s both;
+        }
+
+        .menu-item {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            padding: 1.5rem;
             text-decoration: none;
-            padding: 1rem;
-            border-radius: 8px;
+            color: #FF5733;
             text-align: center;
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
         }
 
-        .menu a:hover {
-            background-color: #FF5733;
-            color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .page-container {
+        .menu-item::before {
+            content: '';
             position: absolute;
-            width: 100%;
-            height: 100%;
             top: 0;
             left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #FF9933, #FF5733);
             opacity: 0;
-            transform: scale(0);
-            transform-origin: top left;
-            transition: all 0.7s ease-in-out;
-            z-index: -1;
-        }
-
-        .active-page {
-            opacity: 1;
-            transform: scale(1);
+            transition: opacity 0.3s ease;
             z-index: 1;
         }
 
-        .content {
-            animation: fadeIn 0.6s ease-out;
+        .menu-item:hover::before {
+            opacity: 0.2;
         }
 
-        @keyframes fadeIn {
+        .menu-item h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item p {
+            font-size: 1rem;
+            color: #666;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(-20px);
             }
             to {
                 opacity: 1;
@@ -100,49 +118,82 @@
             }
         }
 
-        .back-button {
-            background-color: #FF5733;
-            color: #fff;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
-        .back-button:hover {
-            background-color: #FF9933;
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .menu {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="main-menu" class="page-container active-page">
-        <header>
-            <h1>Erforschung des Hinduismus</h1>
-        </header>
+    <header>
+        <h1>Erforschung des Hinduismus</h1>
+        <p class="subtitle">Entdecken Sie die faszinierende Welt einer der ältesten Religionen</p>
+    </header>
 
-        <main>
-            <nav class="menu">
-                <a href="#" id="geschichte-link">Geschichte</a>
-                <a href="#">Zentrale Glaubensinhalte</a>
-                <a href="#">Heilige Schriften</a>
-                <a href="#">Rituale und Feste</a>
-                <a href="#">Lebensregeln</a>
-                <a href="#">Verbreitung</a>
-            </nav>
-        </main>
-    </div>
+    <main class="menu">
+        <a href="#geschichte" class="menu-item">
+            <h2>Geschichte</h2>
+            <p>Erkunden Sie die Ursprünge und Entwicklung des Hinduismus</p>
+        </a>
+        <a href="#glaubensinhalte" class="menu-item">
+            <h2>Zentrale Glaubensinhalte</h2>
+            <p>Lernen Sie die Kernkonzepte des hinduistischen Glaubens kennen</p>
+        </a>
+        <a href="#schriften" class="menu-item">
+            <h2>Heilige Schriften</h2>
+            <p>Entdecken Sie die wichtigsten Texte und ihre Bedeutung</p>
+        </a>
+        <a href="#rituale" class="menu-item">
+            <h2>Rituale und Feste</h2>
+            <p>Erfahren Sie mehr über hinduistische Zeremonien und Feierlichkeiten</p>
+        </a>
+        <a href="#lebensregeln" class="menu-item">
+            <h2>Lebensregeln</h2>
+            <p>Verstehen Sie die ethischen Prinzipien und Verhaltensregeln</p>
+        </a>
+        <a href="#verbreitung" class="menu-item">
+            <h2>Verbreitung</h2>
+            <p>Sehen Sie, wie sich der Hinduismus weltweit verbreitet hat</p>
+        </a>
+    </main>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const geschichteLink = document.getElementById('geschichte-link');
+            const menuItems = document.querySelectorAll('.menu-item');
 
-            // Handling page transition
-            geschichteLink.addEventListener('click', () => {
-                const container = document.querySelector('.page-container');
-                container.classList.remove('active-page');
-                window.location.href = 'geschichte.html'; // Transition to 'geschichte.html' page
+            menuItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    item.style.transform = 'translateY(-5px) scale(1.03)';
+                });
+
+                item.addEventListener('mouseleave', () => {
+                    item.style.transform = 'translateY(0) scale(1)';
+                });
+
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = item.getAttribute('href').slice(1);
+                    console.log(`Navigating to: ${targetId}`);
+                    // Here you would typically handle the navigation to the specific page or section
+                });
             });
         });
     </script>
