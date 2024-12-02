@@ -21,7 +21,6 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            overflow-x: hidden;
         }
 
         header {
@@ -38,13 +37,15 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        main {
+        #content-container {
             flex-grow: 1;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 2rem;
-            animation: fadeIn 1s ease-in-out forwards;
+            opacity: 1;
+            transform: scale(1);
+            transition: all 0.6s ease-in-out;
         }
 
         .menu {
@@ -74,33 +75,6 @@
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }
 
-        .menu a:focus {
-            animation: expandPage 0.6s forwards ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes expandPage {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.3);
-                opacity: 0.7;
-            }
-            100% {
-                transform: scale(100);
-                opacity: 0;
-            }
-        }
-
         @media (max-width: 600px) {
             h1 {
                 font-size: 2rem;
@@ -110,12 +84,27 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const links = document.querySelectorAll('.menu a');
+            const contentContainer = document.querySelector('#content-container');
+
             links.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const url = e.target.getAttribute('href');
-                    document.body.classList.add('fade-out');
-                    setTimeout(() => window.location = url, 600);
+
+                    // Add animation out
+                    contentContainer.style.opacity = 0;
+                    contentContainer.style.transform = "scale(0.9)";
+                    
+                    setTimeout(() => {
+                        // Load new content dynamically
+                        fetch(url)
+                            .then(response => response.text())
+                            .then(html => {
+                                contentContainer.innerHTML = html;
+                                contentContainer.style.opacity = 1;
+                                contentContainer.style.transform = "scale(1)";
+                            });
+                    }, 600); // Match transition duration
                 });
             });
         });
@@ -126,7 +115,7 @@
         <h1>Hinduismus Entdecken</h1>
     </header>
 
-    <main>
+    <main id="content-container">
         <nav class="menu">
             <a href="geschichte.html">Geschichte</a>
             <a href="glaubensinhalte.html">Zentrale Glaubensinhalte</a>
