@@ -3,46 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hinduismus Spiel</title>
+    <title>Exploring Hinduism</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f0f8ff;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFF5E6;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
         header {
-            background-color: #ff7043;
-            color: white;
-            padding: 20px;
+            background-color: #FF9933;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .start-button {
-            margin-top: 50px;
-            padding: 15px 30px;
-            background-color: #ffcc80;
+
+        h1 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .menu a {
+            background-color: #fff;
+            color: #FF5733;
+            text-decoration: none;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu a:hover {
+            background-color: #FF5733;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        button {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
             border: none;
-            font-size: 20px;
+            border-radius: 8px;
+            background-color: #FF5733;
+            color: #fff;
             cursor: pointer;
-            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
-        .start-button:hover {
-            background-color: #ffb74d;
+
+        button:hover {
+            background-color: #FF9933;
+            transform: translateY(-3px);
+        }
+
+        .mandala {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="%23FF9933" stroke-width="2"/><circle cx="50" cy="50" r="35" fill="none" stroke="%23FF9933" stroke-width="2"/><circle cx="50" cy="50" r="25" fill="none" stroke="%23FF9933" stroke-width="2"/><circle cx="50" cy="50" r="15" fill="none" stroke="%23FF9933" stroke-width="2"/></svg>');
+            background-size: contain;
+            opacity: 0.1;
+            z-index: -1;
+            animation: rotate 60s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Hinduismus - Das Spiel</h1>
-        <p>Entdecke die Welt des Hinduismus und teste dein Wissen!</p>
+        <h1>Exploring Hinduism</h1>
     </header>
+
     <main>
-        <button class="start-button" onclick="startGame()">Start</button>
+        <nav class="menu">
+            <a href="vedas.html">Vedas</a>
+            <a href="deities.html">Deities</a>
+            <a href="philosophy.html">Philosophy</a>
+            <a href="practices.html">Practices</a>
+            <a href="festivals.html">Festivals</a>
+            <a href="symbols.html">Symbols</a>
+        </nav>
+        <button id="randomTopic">Discover a Random Topic</button>
     </main>
+
+    <div class="mandala"></div>
+
     <script>
-        function startGame() {
-            window.location.href = 'menu.html';
-        }
+        const topics = ["vedas", "deities", "philosophy", "practices", "festivals", "symbols"];
+        document.querySelector("#randomTopic").addEventListener("click", () => {
+            const randomTopic = topics[Math.floor(Math.random() * topics.length)];
+            window.location.href = `${randomTopic}.html`;
+        });
     </script>
 </body>
 </html>
