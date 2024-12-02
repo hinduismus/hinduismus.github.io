@@ -48,6 +48,7 @@
 
         .menu {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 2rem;
             padding: 3rem 2rem;
@@ -69,8 +70,9 @@
             backdrop-filter: blur(5px);
             position: relative;
             overflow: hidden;
-            flex: 1;
+            flex: 1 1 calc(33.333% - 2rem);
             max-width: 300px;
+            min-width: 250px;
         }
 
         .menu-item:hover {
@@ -138,13 +140,8 @@
                 font-size: 1rem;
             }
 
-            .menu {
-                flex-direction: column;
-                align-items: center;
-            }
-
             .menu-item {
-                width: 100%;
+                flex: 1 1 100%;
                 max-width: none;
             }
         }
@@ -168,6 +165,18 @@
         <a href="schriften.html" class="menu-item">
             <h2>Heilige Schriften</h2>
             <p>Entdecken Sie die wichtigsten Texte und ihre Bedeutung</p>
+        </a>
+        <a href="rituale.html" class="menu-item">
+            <h2>Rituale und Feste</h2>
+            <p>Erfahren Sie mehr über hinduistische Zeremonien und Feierlichkeiten</p>
+        </a>
+        <a href="lebensregeln.html" class="menu-item">
+            <h2>Lebensregeln</h2>
+            <p>Verstehen Sie die ethischen Prinzipien und Verhaltensregeln</p>
+        </a>
+        <a href="verbreitung.html" class="menu-item">
+            <h2>Verbreitung</h2>
+            <p>Sehen Sie, wie sich der Hinduismus weltweit verbreitet hat</p>
         </a>
     </main>
 
