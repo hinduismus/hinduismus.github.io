@@ -72,11 +72,11 @@
             flex: 1 1 calc(33.333% - 2rem);
             max-width: 300px;
             min-width: 250px;
-            height: 200px; /* Set fixed height for consistency */
-            display: flex; /* Enable flexbox */
+            height: 200px;
+            display: flex;
             flex-direction: column;
-            justify-content: center; /* Center content vertically */
-            align-items: center; /* Center content horizontally */
+            justify-content: center;
+            align-items: center;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.5s ease-out forwards;
@@ -116,7 +116,7 @@
             margin-bottom: 0.5rem;
             position: relative;
             z-index: 2;
-            flex-shrink: 0; /* Prevent shrinking */
+            flex-shrink: 0;
         }
 
         .menu-item p {
@@ -124,7 +124,17 @@
             color: #666;
             position: relative;
             z-index: 2;
-            flex-shrink: 0; /* Prevent shrinking */
+            flex-shrink: 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: auto;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #555;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
         }
 
         @keyframes fadeInDown {
@@ -197,6 +207,10 @@
             <p>Sehe, wie sich der Hinduismus weltweit verbreitet hat</p>
         </a>
     </main>
+
+    <footer>
+        Projekt von Jonathan Kochs, Bendegúz Kozma und Mátyás Szederkényi
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
