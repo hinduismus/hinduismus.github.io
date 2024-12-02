@@ -47,8 +47,8 @@
         }
 
         .menu {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            display: flex;
+            justify-content: center;
             gap: 2rem;
             padding: 3rem 2rem;
             max-width: 1200px;
@@ -69,6 +69,8 @@
             backdrop-filter: blur(5px);
             position: relative;
             overflow: hidden;
+            flex: 1;
+            max-width: 300px;
         }
 
         .menu-item:hover {
@@ -137,7 +139,13 @@
             }
 
             .menu {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu-item {
+                width: 100%;
+                max-width: none;
             }
         }
     </style>
@@ -149,29 +157,17 @@
     </header>
 
     <main class="menu">
-        <a href="#geschichte" class="menu-item">
+        <a href="geschichte.html" class="menu-item">
             <h2>Geschichte</h2>
             <p>Erkunden Sie die Ursprünge und Entwicklung des Hinduismus</p>
         </a>
-        <a href="#glaubensinhalte" class="menu-item">
+        <a href="glaubensinhalte.html" class="menu-item">
             <h2>Zentrale Glaubensinhalte</h2>
             <p>Lernen Sie die Kernkonzepte des hinduistischen Glaubens kennen</p>
         </a>
-        <a href="#schriften" class="menu-item">
+        <a href="schriften.html" class="menu-item">
             <h2>Heilige Schriften</h2>
             <p>Entdecken Sie die wichtigsten Texte und ihre Bedeutung</p>
-        </a>
-        <a href="#rituale" class="menu-item">
-            <h2>Rituale und Feste</h2>
-            <p>Erfahren Sie mehr über hinduistische Zeremonien und Feierlichkeiten</p>
-        </a>
-        <a href="#lebensregeln" class="menu-item">
-            <h2>Lebensregeln</h2>
-            <p>Verstehen Sie die ethischen Prinzipien und Verhaltensregeln</p>
-        </a>
-        <a href="#verbreitung" class="menu-item">
-            <h2>Verbreitung</h2>
-            <p>Sehen Sie, wie sich der Hinduismus weltweit verbreitet hat</p>
         </a>
     </main>
 
@@ -189,10 +185,14 @@
                 });
 
                 item.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = item.getAttribute('href').slice(1);
-                    console.log(`Navigating to: ${targetId}`);
-                    // Here you would typically handle the navigation to the specific page or section
+                    const href = item.getAttribute('href');
+                    if (href) {
+                        e.preventDefault();
+                        document.body.style.opacity = '0';
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 500);
+                    }
                 });
             });
         });
