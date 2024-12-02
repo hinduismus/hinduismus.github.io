@@ -19,22 +19,66 @@
             color: #333;
             line-height: 1.6;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            overflow: hidden;
         }
 
         header {
             background-color: #FF9933;
-            padding: 2rem;
+            padding: 1rem 2rem;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #FF9933;
+            z-index: 1000;
+            animation: slideDown 0.8s ease-in-out forwards;
+        }
+
+        .timeline div {
+            flex: 1;
+            text-align: center;
+            font-size: 0.9rem;
+            color: white;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .timeline div:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.4);
+            z-index: -1;
+            transform: translateY(-50%);
+        }
+
+        .timeline div:first-child:before {
+            background-color: transparent;
+        }
+
+        .timeline div.active {
+            color: #FFF5E6;
+            font-size: 1rem;
+        }
+
+        .timeline div.active:before {
+            background-color: white;
+        }
+
         h1 {
             color: #fff;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
         }
 
         .back-link {
@@ -50,7 +94,7 @@
 
         main {
             flex-grow: 1;
-            padding: 2rem;
+            padding: 4rem 2rem 2rem; /* Padding adjusted for timeline */
             max-width: 800px;
             margin: 0 auto;
         }
@@ -60,15 +104,22 @@
             border-radius: 8px;
             padding: 2rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInSlideUp 1.2s ease-out forwards;
         }
 
         h2 {
             color: #FF5733;
             margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in forwards;
         }
 
-        p {
-            margin-bottom: 1rem;
+        p, ul {
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in forwards;
+            animation-delay: 0.3s;
         }
 
         ul {
@@ -87,7 +138,7 @@
             background-size: contain;
             opacity: 0.1;
             z-index: -1;
-            animation: rotate 60s linear infinite;
+            animation: rotate 60s linear infinite, fadeIn 2s forwards;
         }
 
         @keyframes rotate {
@@ -98,12 +149,55 @@
                 transform: translate(-50%, -50%) rotate(360deg);
             }
         }
+
+        @keyframes fadeInSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="timeline">
+        <div class="completed">Intro</div>
+        <div class="active">Vedas</div>
+        <div>Deities</div>
+        <div>Philosophy</div>
+        <div>Practices</div>
+    </div>
+
     <header>
         <h1>The Vedas</h1>
-        <a class="back-link" href="index.html">&larr; Back to Menu</a>
+        <a href="index.html" class="back-link">&larr; Back to Menu</a>
     </header>
 
     <main>
