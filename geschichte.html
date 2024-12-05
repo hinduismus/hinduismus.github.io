@@ -15,31 +15,39 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #FFF5E6;
+            background-color: #FAF0E6;
             color: #333;
-            line-height: 1.6;
+            line-height: 1.7;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
             overflow-x: hidden;
         }
 
         header {
-            background-color: #FF9933;
-            padding: 2rem;
+            background-color: #FF7F50;
+            padding: 2rem 1rem;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
         }
 
         h1 {
             color: #fff;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .content {
             padding: 2rem;
+            width: 90%;
+            max-width: 1000px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             animation: fadeIn 0.6s ease-out;
         }
 
@@ -54,19 +62,68 @@
             }
         }
 
+        h2, h3 {
+            color: #FF7F50;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-bottom: 1rem;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        ul li strong {
+            color: #FF5733;
+        }
+
+        blockquote {
+            font-style: italic;
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #FFEBE5;
+            border-left: 5px solid #FF5733;
+            font-size: 1.2rem;
+        }
+
         .back-button {
+            display: inline-block;
             background-color: #FF5733;
             color: #fff;
-            padding: 0.8rem 1.5rem;
+            padding: 0.8rem 2rem;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
+            text-decoration: none;
+            margin-top: 2rem;
             transition: background-color 0.3s ease;
+            text-align: center;
         }
 
         .back-button:hover {
-            background-color: #FF9933;
+            background-color: #FF7F50;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            .content {
+                padding: 1.5rem;
+            }
         }
 
     </style>
@@ -77,9 +134,9 @@
     </header>
 
     <div class="content">
-        <h2>Geschichte des Hinduismus</h2>
-        
-        <h3> Einführung in den Hinduismus</h3>
+        <h2>Präsentation 1: Geschichte des Hinduismus</h2>
+
+        <h3>Einführung in den Hinduismus</h3>
         <ul>
             <li><strong>Definition:</strong></li>
             <li>Eine der ältesten Religionen der Welt (ca. 1500 v. Chr.).</li>
@@ -91,7 +148,7 @@
             <li>Bedeutende Texte: Veden, Upanishaden, Mahabharata (Bhagavad Gita), Ramayana.</li>
         </ul>
 
-        <h3>: Entwicklung und Verbreitung</h3>
+        <h3>Entwicklung und Verbreitung</h3>
         <h4>Frühphase:</h4>
         <ul>
             <li>Vedische Periode (1500–500 v. Chr.): Opferkulte und Hymnen.</li>
@@ -108,7 +165,7 @@
             <li>Durch Migration und Yoga weltweit bekannt.</li>
         </ul>
 
-        <h3> Wichtige Konzepte des Hinduismus</h3>
+        <h3>Wichtige Konzepte des Hinduismus</h3>
         <ul>
             <li><strong>Karma:</strong> Ursache-Wirkung; Handlungen bestimmen das nächste Leben.</li>
             <li><strong>Samsara:</strong> Kreislauf von Geburt, Tod und Wiedergeburt.</li>
@@ -116,16 +173,16 @@
             <li><strong>Dharma:</strong> Pflichten und moralische Gesetze.</li>
         </ul>
 
-        <h3> Der Hinduismus heute</h3>
+        <h3>Der Hinduismus heute</h3>
         <ul>
             <li><strong>Bedeutung:</strong> 1,2 Milliarden Anhänger, hauptsächlich in Indien.</li>
             <li>Praktische Bedeutung durch Rituale, Feste (z. B. Diwali, Holi).</li>
         </ul>
-        
+
         <h4>Schlusszitat:</h4>
         <blockquote>„Wahrheit ist eine, die Weisen nennen sie bei verschiedenen Namen.“ – Rigveda</blockquote>
 
-        <button class="back-button" onclick="window.location.href='index'">Zurück zum Hauptmenü</button>
+        <a href="index" class="back-button">Zurück zum Hauptmenü</a>
     </div>
 </body>
 </html>
