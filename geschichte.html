@@ -15,7 +15,6 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #FAF0E6;
             color: #333;
             line-height: 1.7;
             min-height: 100vh;
@@ -24,10 +23,14 @@
             justify-content: center;
             align-items: center;
             overflow-x: hidden;
+            background-image: url('geschichte.jpg'); /* Add the background image */
+            background-size: cover; /* Make sure the image covers the full viewport */
+            background-position: center; /* Center the background image */
+            background-attachment: fixed; /* Keeps the background fixed when scrolling */
         }
 
         header {
-            background-color: #FF7F50;
+            background-color: rgba(255, 127, 80, 0.8); /* Semi-transparent background for header */
             padding: 2rem 1rem;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -45,7 +48,7 @@
             padding: 2rem;
             width: 90%;
             max-width: 1000px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             animation: fadeIn 0.6s ease-out;
