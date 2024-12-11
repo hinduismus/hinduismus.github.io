@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geschichte des Hinduismus</title>
+    <title>Hinduismus Portal</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --primary-color: #FF7F50;
+            --secondary-color: #FF5733;
+            --accent-color: #FFA07A;
+            --text-color: #333;
+            --background-color: rgba(255, 255, 255, 0.95);
+            --nav-bg: rgba(255, 255, 255, 0.9);
+            --transition-speed: 0.3s;
+        }
 
         * {
             margin: 0;
@@ -15,45 +25,137 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            color: #333;
+            color: var(--text-color);
             line-height: 1.7;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            overflow-x: hidden;
-            background-image: url('IMG_7608.jpeg'); /* Add the background image */
-            background-size: cover; /* Make sure the image covers the full viewport */
-            background-position: center; /* Center the background image */
-            background-attachment: fixed; /* Keeps the background fixed when scrolling */
+            background-image: url('IMG_7608.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
+        /* Header Styles */
         header {
-            background-color: rgba(255, 127, 80, 0.8); /* Semi-transparent background for header */
-            padding: 2rem 1rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 1rem;
+            position: fixed;
             width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: transform var(--transition-speed) ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header.hidden {
+            transform: translateY(-100%);
         }
 
         h1 {
             color: #fff;
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin: 0;
         }
 
+        /* Navigation Styles */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all var(--transition-speed) ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            transform: translateX(-100%);
+            transition: transform var(--transition-speed) ease;
+        }
+
+        nav a:hover::before {
+            transform: translateX(0);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Main Content Styles */
         .content {
+            margin-top: 80px;
             padding: 2rem;
             width: 90%;
-            max-width: 1000px;
-            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: var(--background-color);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
             animation: fadeIn 0.6s ease-out;
         }
 
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-color);
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 0.8rem;
+                text-align: center;
+            }
+
+            .content {
+                width: 95%;
+                padding: 1rem;
+                margin-top: 60px;
+            }
+        }
+
+        /* Animations */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -64,128 +166,65 @@
                 transform: translateY(0);
             }
         }
-
-        h2, h3 {
-            color: #FF7F50;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        h4 {
-            color: #333;
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-        }
-
-        ul {
-            list-style-type: none;
-            margin-bottom: 1rem;
-        }
-
-        ul li {
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        ul li strong {
-            color: #FF5733;
-        }
-
-        blockquote {
-            font-style: italic;
-            margin-top: 1rem;
-            padding: 1rem;
-            background-color: #FFEBE5;
-            border-left: 5px solid #FF5733;
-            font-size: 1.2rem;
-        }
-
-        .back-button {
-            display: inline-block;
-            background-color: #FF5733;
-            color: #fff;
-            padding: 0.8rem 2rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            text-decoration: none;
-            margin-top: 2rem;
-            transition: background-color 0.3s ease;
-            text-align: center;
-        }
-
-        .back-button:hover {
-            background-color: #FF7F50;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-            .content {
-                padding: 1.5rem;
-            }
-        }
-
     </style>
 </head>
 <body>
     <header>
-        <h1>Geschichte des Hinduismus</h1>
+        <h1>Hinduismus</h1>
+        <button class="nav-toggle">☰</button>
+        <nav>
+            <a href="index.html">Startseite</a>
+            <a href="geschichte.html">Geschichte</a>
+            <a href="glaubensinhalte.html">Glaubensinhalte</a>
+            <a href="lebensregeln.html">Lebensregeln</a>
+            <a href="rituale.html">Rituale</a>
+            <a href="schriften.html">Schriften</a>
+            <a href="verbreitung.html">Verbreitung</a>
+        </nav>
     </header>
 
     <div class="content">
-        <h2>Präsentation 1: Geschichte des Hinduismus</h2>
-
-        <h3>Einführung in den Hinduismus</h3>
-        <ul>
-            <li><strong>Definition:</strong></li>
-            <li>Eine der ältesten Religionen der Welt (ca. 1500 v. Chr.).</li>
-            <li>Keine zentrale Gründerfigur; basiert auf einer Vielfalt von Texten, Traditionen und Praktiken.</li>
-        </ul>
-        <h4>Wurzeln:</h4>
-        <ul>
-            <li>Ursprung in der Indus-Kultur und den vedischen Ritualen.</li>
-            <li>Bedeutende Texte: Veden, Upanishaden, Mahabharata (Bhagavad Gita), Ramayana.</li>
-        </ul>
-
-        <h3>Entwicklung und Verbreitung</h3>
-        <h4>Frühphase:</h4>
-        <ul>
-            <li>Vedische Periode (1500–500 v. Chr.): Opferkulte und Hymnen.</li>
-            <li>Später: Philosophische Systeme wie Yoga, Sankhya und Vedanta.</li>
-        </ul>
-        <h4>Hauptströmungen:</h4>
-        <ul>
-            <li>Vaishnavismus: Verehrung Vishnus.</li>
-            <li>Shaivismus: Verehrung Shivas.</li>
-            <li>Shaktismus: Verehrung der Göttin Shakti.</li>
-        </ul>
-        <h4>Globalisierung:</h4>
-        <ul>
-            <li>Durch Migration und Yoga weltweit bekannt.</li>
-        </ul>
-
-        <h3>Wichtige Konzepte des Hinduismus</h3>
-        <ul>
-            <li><strong>Karma:</strong> Ursache-Wirkung; Handlungen bestimmen das nächste Leben.</li>
-            <li><strong>Samsara:</strong> Kreislauf von Geburt, Tod und Wiedergeburt.</li>
-            <li><strong>Moksha:</strong> Befreiung aus dem Samsara, Ziel des Lebens.</li>
-            <li><strong>Dharma:</strong> Pflichten und moralische Gesetze.</li>
-        </ul>
-
-        <h3>Der Hinduismus heute</h3>
-        <ul>
-            <li><strong>Bedeutung:</strong> 1,2 Milliarden Anhänger, hauptsächlich in Indien.</li>
-            <li>Praktische Bedeutung durch Rituale, Feste (z. B. Diwali, Holi).</li>
-        </ul>
-
-        <h4>Schlusszitat:</h4>
-        <blockquote>„Wahrheit ist eine, die Weisen nennen sie bei verschiedenen Namen.“ – Rigveda</blockquote>
-
-        <a href="index" class="back-button">Zurück zum Hauptmenü</a>
+        <!-- Content goes here -->
     </div>
+
+    <script>
+        // Header hide on scroll
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.classList.remove('hidden');
+                return;
+            }
+            
+            if (currentScroll > lastScroll && !header.classList.contains('hidden')) {
+                // Scrolling down
+                header.classList.add('hidden');
+            } else if (currentScroll < lastScroll && header.classList.contains('hidden')) {
+                // Scrolling up
+                header.classList.remove('hidden');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const nav = document.querySelector('nav');
+
+        navToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Close mobile nav when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !navToggle.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
