@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geschichte des Hinduismus</title>
+    <title>Heilige Schriften</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -20,43 +20,44 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            background: url('heilige_schrift.jpeg') no-repeat center center/cover;
-            background-attachment: fixed; /* Keeps the background fixed in place */
+            overflow-x: hidden;
+            background-image: url('heilige_schrift.jpeg'); /* Add the background image */
+            background-size: cover; /* Make sure the image covers the full viewport */
+            background-position: center; /* Center the background image */
+            background-attachment: fixed; /* Keeps the background fixed when scrolling */
         }
 
         header {
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black for readability */
-            width: 100%;
-            padding: 0.8rem 1rem; /* Smaller padding */
+            background-color: rgba(255, 127, 80, 0.8); /* Semi-transparent background for header */
+            padding: 2rem 1rem;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
         }
 
         h1 {
             color: #fff;
-            font-size: 2rem; /* Smaller font size */
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .content {
             padding: 2rem;
-            margin: 2rem auto;
             width: 90%;
             max-width: 1000px;
-            background: rgba(255, 255, 255, 0.85); /* More transparent box */
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 0.8s ease-out;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.6s ease-out;
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -68,50 +69,47 @@
             color: #FF7F50;
             font-size: 2rem;
             margin-bottom: 1rem;
-            border-left: 4px solid #FF7F50;
-            padding-left: 0.5rem;
         }
 
         h4 {
-            color: #555;
-            font-size: 1.4rem;
+            color: #333;
+            font-size: 1.2rem;
             margin-bottom: 0.8rem;
-            font-weight: 600;
         }
 
         ul {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-            line-height: 1.8;
+            list-style-type: none;
+            margin-bottom: 1rem;
         }
 
         ul li {
-            font-size: 1.2rem;
             margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
 
         ul li strong {
             color: #FF5733;
-            font-weight: 600;
         }
 
         blockquote {
             font-style: italic;
-            margin-top: 1.5rem;
-            padding: 1rem 1.5rem;
-            background: rgba(255, 239, 227, 0.8);
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #FFEBE5;
             border-left: 5px solid #FF5733;
             font-size: 1.2rem;
-            line-height: 1.6;
-            border-radius: 6px;
         }
-
+        
         img {
-            width: 100%; /* Make the images fill the container's width */
-            height: auto; /* Keep the aspect ratio */
+            width: 50%;  
+            display: block;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
             object-fit: cover; /* Ensures the image covers the box without distortion */
-            border-radius: 8px; /* Adds rounded corners to images */
-            margin-top: 1rem; /* Adds spacing between elements */
+            border-radius: 8px; /* Optional: Adds rounded corners to images */
+            margin-top: 1rem;  /* Optional: Adds spacing between elements */
         }
 
         .back-button {
@@ -120,31 +118,28 @@
             color: #fff;
             padding: 0.8rem 2rem;
             border: none;
-            border-radius: 30px;
+            border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
             text-decoration: none;
-            margin-top: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
+            margin-top: 2rem;
+            transition: background-color 0.3s ease;
             text-align: center;
         }
 
         .back-button:hover {
             background-color: #FF7F50;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 1.6rem;
+                font-size: 2.2rem;
             }
             .content {
                 padding: 1.5rem;
             }
         }
+
     </style>
 </head>
 <body>
@@ -158,6 +153,7 @@
             <img src="om.png" alt="om">  
             <li>Das Hauptsymbol des Hinduismus ist das Om (ॐ), auch Aum genannt. Es ist ein heiliges Klangsymbol und repräsentiert die Essenz des Universums und die höchste Realität.</li>
             <li>Bedeutung: Das Om steht für die drei Hauptgötter des Hinduismus: Brahma (Schöpfung), Vishnu (Erhaltung) und Shiva (Zerstörung). Es symbolisiert auch die drei Bewusstseinszustände: Wachsein, Träumen und Tiefschlaf sowie die transzendentale Wirklichkeit, die darüber hinausgeht.</li>  
+             
         </ul>
 
         <h2>Heilige Schriften</h2>
@@ -200,14 +196,25 @@
             
         <h4>Ramayana</h4>
         <ul>
-        <li>Das Ramayana ist ein weiteres bedeutendes Epos, das die Geschichte von Lord Rama erzählt, seiner Frau Sita, seinem treuen Gefährten Hanuman und dem Kampf gegen den Dämonenkönig Ravana. Das Ramayana enthält viele Lektionen über Tugend, Pflicht (Dharma) und Hingabe.</li>
+        <li>Das Ramayana ist ein weiteres bedeutendes Epos, das die Geschichte von Lord Rama erzählt, seiner Frau Sita, seinem treuen Gefährten Hanuman und seiner Reise, um seine Frau aus der Gefangenschaft des Dämonenkönigs Ravana zu befreien. Es ist eine Geschichte von Tugend, Pflicht (Dharma) und göttlicher Intervention.</li>
         </ul>
         
-        <blockquote>
-            "Das Ziel des Lebens ist es, Moksha zu erreichen – die Befreiung von der Wiedergeburt und dem Zyklus von Leid." - Bhagavad Gita
-        </blockquote>
+        <h4>Puranas</h4>
+        <ul>
+        <li>Die Puranas sind eine Sammlung von Texten, die die Geschichten der Götter, Göttinnen, Heiligen und Könige des Hinduismus erzählen. Sie beinhalten Mythen, Legenden und Lehrgeschichten über die Ursprünge des Universums, der Welt und der Götter. Zu den bekanntesten Puranas gehören das Vishnu Purana, Shiva Purana und Bhagavata Purana.</li>
+        </ul>
+            
+        <h4>Dharmashastras</h4>
+        <ul>
+        <li>Diese Schriften enthalten rechtliche und moralische Anweisungen für das individuelle und gesellschaftliche Leben. Das bekannteste Werk ist das Manu Smriti, das als eine Art Verhaltenskodex dient und Regeln zu Themen wie Familie, Gesellschaft und Religion aufstellt.</li>
+        </ul>
+            
+        <h4>Agamas und Tantras</h4>
+        <ul>
+        <li>Die Agamas und Tantras sind Texte, die sich mit Ritualen, Tempeldiensten und spirituellen Praktiken befassen. Sie sind besonders wichtig für bestimmte religiöse Strömungen innerhalb des Hinduismus, wie den Shaivismus und Shaktismus, und beinhalten detaillierte Anweisungen für rituelle Handlungen und Meditationstechniken.</li>
+        </ul>
         
     </div>
-    <a href="index.html" class="back-button">Zurück zur Hauptseite</a>
+    <a href="index" class="back-button">Zurück zum Hauptmenü</a>
 </body>
 </html>
