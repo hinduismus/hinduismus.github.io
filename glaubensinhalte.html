@@ -22,41 +22,37 @@
             flex-direction: column;
             align-items: center;
             background: url('ganesha_statue.jpeg') no-repeat center center/cover;
-            background-attachment: fixed; /* Keeps the background fixed in place */
+            background-attachment: fixed;
         }
 
         header {
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black for readability */
+            background-color: rgba(255, 127, 80, 0.8);
             width: 100%;
-            padding: 0.8rem 1rem; /* Smaller padding */
+            padding: 2rem 1rem;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
             color: #fff;
-            font-size: 2rem; /* Smaller font size */
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            font-size: 2.8rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .content {
             padding: 2rem;
-            margin: 2rem auto;
             width: 90%;
             max-width: 1000px;
-            background: rgba(255, 255, 255, 0.85); /* More transparent box */
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 0.8s ease-out;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.6s ease-out;
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -68,50 +64,44 @@
             color: #FF7F50;
             font-size: 2rem;
             margin-bottom: 1rem;
-            border-left: 4px solid #FF7F50;
-            padding-left: 0.5rem;
         }
 
         h4 {
-            color: #555;
-            font-size: 1.4rem;
+            color: #333;
+            font-size: 1.2rem;
             margin-bottom: 0.8rem;
-            font-weight: 600;
         }
 
         ul {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-            line-height: 1.8;
+            list-style-type: none;
+            margin-bottom: 1rem;
         }
 
         ul li {
-            font-size: 1.2rem;
             margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
 
         ul li strong {
             color: #FF5733;
-            font-weight: 600;
-        }
-
-        blockquote {
-            font-style: italic;
-            margin-top: 1.5rem;
-            padding: 1rem 1.5rem;
-            background: rgba(255, 239, 227, 0.8);
-            border-left: 5px solid #FF5733;
-            font-size: 1.2rem;
-            line-height: 1.6;
-            border-radius: 6px;
         }
 
         img {
-            width: 100%; /* Make the images fill the container's width */
-            height: auto; /* Keep the aspect ratio */
-            object-fit: cover; /* Ensures the image covers the box without distortion */
-            border-radius: 8px; /* Adds rounded corners to images */
-            margin-top: 1rem; /* Adds spacing between elements */
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        
+        blockquote {
+            font-style: italic;
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #FFEBE5;
+            border-left: 5px solid #FF5733;
+            font-size: 1.2rem;
         }
 
         .back-button {
@@ -120,31 +110,28 @@
             color: #fff;
             padding: 0.8rem 2rem;
             border: none;
-            border-radius: 30px;
+            border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
             text-decoration: none;
-            margin-top: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
+            margin-top: 2rem;
+            transition: background-color 0.3s ease;
             text-align: center;
         }
 
         .back-button:hover {
             background-color: #FF7F50;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 1.6rem;
+                font-size: 2.2rem;
             }
             .content {
                 padding: 1.5rem;
             }
         }
+
     </style>
 </head>
 <body>
@@ -184,8 +171,8 @@
         <li>ewiges, unpersönliches, göttliches Prinzip</li>
         <li>Ursprung von allem</li>
         <li>Die Göttinnen und Götter sind die wechselhafte Erscheinungsform des einen absoluten Brahmanen.</li>
-
-        <a href="index" class="back-button">Zurück zum Hauptmenü</a>
     </div>
+
+    <a href="index" class="back-button">Zurück zum Hauptmenü</a>
 </body>
 </html>
