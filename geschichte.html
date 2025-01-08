@@ -17,13 +17,12 @@
             font-family: 'Poppins', sans-serif;
             color: #333;
             line-height: 1.7;
-            height: 100vh; /* Full viewport height */
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             background: url('geschichte.jpeg') no-repeat center center/cover;
             background-attachment: fixed; /* Keeps the background fixed in place */
-            overflow: hidden;
         }
 
         header {
@@ -52,8 +51,6 @@
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             animation: fadeIn 0.8s ease-out;
-            overflow-y: auto; /* Adds scrolling inside the box */
-            max-height: 70vh; /* Limits the height so the box can scroll */
         }
 
         @keyframes fadeIn {
@@ -120,6 +117,7 @@
             font-weight: bold;
             text-decoration: none;
             margin-top: 1.5rem;
+            margin-bottom: 2rem;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
             text-align: center;
