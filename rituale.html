@@ -20,44 +20,43 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            overflow-x: hidden;
-            background-image: url('lichterfest.jpeg'); /* Add the background image */
-            background-size: cover; /* Make sure the image covers the full viewport */
-            background-position: center; /* Center the background image */
-            background-attachment: fixed; /* Keeps the background fixed when scrolling */
+            background: url('lichterfest.jpeg') no-repeat center center/cover;
+            background-attachment: fixed; /* Keeps the background fixed in place */
         }
 
         header {
-            background-color: rgba(255, 127, 80, 0.8); /* Semi-transparent background for header */
-            padding: 2rem 1rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black for readability */
             width: 100%;
+            padding: 0.8rem 1rem; /* Smaller padding */
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
             color: #fff;
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 2rem; /* Smaller font size */
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
         }
 
         .content {
             padding: 2rem;
+            margin: 2rem auto;
             width: 90%;
             max-width: 1000px;
-            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 0.6s ease-out;
+            background: rgba(255, 255, 255, 0.85); /* More transparent box */
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.8s ease-out;
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -69,44 +68,50 @@
             color: #FF7F50;
             font-size: 2rem;
             margin-bottom: 1rem;
+            border-left: 4px solid #FF7F50;
+            padding-left: 0.5rem;
         }
 
         h4 {
-            color: #333;
-            font-size: 1.2rem;
+            color: #555;
+            font-size: 1.4rem;
             margin-bottom: 0.8rem;
+            font-weight: 600;
         }
 
         ul {
-            list-style-type: none;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            line-height: 1.8;
         }
 
         ul li {
+            font-size: 1.2rem;
             margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
         }
 
         ul li strong {
             color: #FF5733;
-        }
-
-        img {
-            width: 100%;      /* Make the images fill the container's width */
-            height: auto;     /* Keep the aspect ratio */
-            object-fit: cover; /* Ensures the image covers the box without distortion */
-            border-radius: 8px; /* Optional: Adds rounded corners to images */
-            margin-top: 1rem;  /* Optional: Adds spacing between elements */
+            font-weight: 600;
         }
 
         blockquote {
             font-style: italic;
-            margin-top: 1rem;
-            padding: 1rem;
-            background-color: #FFEBE5;
+            margin-top: 1.5rem;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 239, 227, 0.8);
             border-left: 5px solid #FF5733;
             font-size: 1.2rem;
+            line-height: 1.6;
+            border-radius: 6px;
+        }
+
+        img {
+            width: 100%; /* Make the images fill the container's width */
+            height: auto; /* Keep the aspect ratio */
+            object-fit: cover; /* Ensures the image covers the box without distortion */
+            border-radius: 8px; /* Adds rounded corners to images */
+            margin-top: 1rem; /* Adds spacing between elements */
         }
 
         .back-button {
@@ -115,28 +120,31 @@
             color: #fff;
             padding: 0.8rem 2rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 30px;
             cursor: pointer;
             font-weight: bold;
             text-decoration: none;
-            margin-top: 2rem;
-            transition: background-color 0.3s ease;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
             text-align: center;
         }
 
         .back-button:hover {
             background-color: #FF7F50;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.2rem;
+                font-size: 1.6rem;
             }
             .content {
                 padding: 1.5rem;
             }
         }
-
     </style>
 </head>
 <body>
@@ -193,9 +201,7 @@
         <p>Yoga ist nicht nur eine körperliche Übung, sondern auch ein Weg, das eigene Bewusstsein zu erweitern und eine tiefere Verbindung zum Göttlichen zu erfahren. Es ist eine Praxis, die sowohl den Körper als auch den Geist fördert und als ein zentrales Element hinduistischer Spiritualität angesehen wird.</p>
 
 
-
-
-        <a href="index" class="back-button">Zurück zum Hauptmenü</a>
     </div>
+    <a href="index" class="back-button">Zurück zum Hauptmenü</a>
 </body>
 </html>
