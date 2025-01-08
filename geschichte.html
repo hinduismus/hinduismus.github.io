@@ -17,15 +17,17 @@
             font-family: 'Poppins', sans-serif;
             color: #333;
             line-height: 1.7;
-            min-height: 100vh;
+            height: 100vh; /* Full viewport height */
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: url('geschichte.jpeg') no-repeat center center/cover; /* Full background visibility */
+            background: url('geschichte.jpeg') no-repeat center center/cover;
+            background-attachment: fixed; /* Keeps the background fixed in place */
+            overflow: hidden;
         }
 
         header {
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black for better readability */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black for readability */
             width: 100%;
             padding: 0.8rem 1rem; /* Smaller padding */
             text-align: center;
@@ -50,6 +52,8 @@
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             animation: fadeIn 0.8s ease-out;
+            overflow-y: auto; /* Adds scrolling inside the box */
+            max-height: 70vh; /* Limits the height so the box can scroll */
         }
 
         @keyframes fadeIn {
@@ -115,9 +119,10 @@
             cursor: pointer;
             font-weight: bold;
             text-decoration: none;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         .back-button:hover {
@@ -168,8 +173,8 @@
             <li><strong>Bedeutung:</strong> 1,2 Milliarden Anhänger, hauptsächlich in Indien.</li>
             <li>Praktische Bedeutung durch Rituale, Feste (z. B. Diwali, Holi).</li>
         </ul>
-
-        <a href="index" class="back-button">Zurück zum Hauptmenü</a>
     </div>
+
+    <a href="index" class="back-button">Zurück zum Hauptmenü</a>
 </body>
 </html>
