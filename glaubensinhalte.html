@@ -115,12 +115,14 @@
         }
 
         img {
-            width: 100%; /* Make the images fill the container's width */
-            height: auto; /* Keep the aspect ratio */
-            object-fit: cover; /* Ensures the image covers the box without distortion */
+            width: 100%; /* Make the image fill the container's width */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 100%; /* Prevent the image from exceeding the container's width */
+            object-fit: contain; /* Ensures the image scales within the box without cropping */
             border-radius: 8px; /* Adds rounded corners to images */
             margin-top: 1rem; /* Adds spacing between elements */
-        }
+         }
+
 
         .back-button {
             display: inline-block;
